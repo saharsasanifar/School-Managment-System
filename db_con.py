@@ -62,7 +62,8 @@ if __name__ == "__main__":
     db_info = {
         'host': 'localhost',
         'user': 'root',
-        'password': 'pass'
+        'password': 'pass',
+        'database': 'School_Managment_System'
         }
     db = Database(**db_info)
 

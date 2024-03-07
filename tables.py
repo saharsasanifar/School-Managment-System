@@ -8,7 +8,8 @@ tables = {
                 college VARCHAR(225),
                 entrance_year INT,
                 course_id INT,
-                PRIMARY KEY (id)
+                PRIMARY KEY (id),
+                FOREIGN KEY (course_id) REFERENCES courses (id)
                 )
 """,
 
@@ -20,7 +21,6 @@ tables = {
                 age INT,
                 college VARCHAR(225),
                 ranking VARCHAR(225) NOT NULL,
-                course_id INT,
                 PRIMARY KEY (id)
                 )
 """,

@@ -44,7 +44,7 @@ tables = {
                 id INT AUTO_INCREMENT,
                 college VARCHAR(225) NOT NULL,
                 seats_num INT,
-                is_smart TINYINT(1),
+                is_smart BOOL,
                 PRIMARY KEY (id)
                 )
 """

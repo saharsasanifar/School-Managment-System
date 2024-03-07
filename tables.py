@@ -46,4 +46,5 @@ tables = {
                 PRIMARY KEY (id)
                 )
 """
+
 }

@@ -32,3 +32,9 @@ class Student:
         params = (id,)
         self.database.execute_query(query, params)
         self.database.commit()
+
+    def add_course(self, course_id):
+        query = "UPDATE students SET course_id = %s WHERE id = %s"
+        params = (course_id, id)
+        self.database.execute_query(query, params)
+        self.database.commit()

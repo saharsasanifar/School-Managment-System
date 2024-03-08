@@ -42,6 +42,7 @@ tables = {
                 id INT AUTO_INCREMENT,
                 college VARCHAR(225) NOT NULL,
                 seats_num INT,
+                accesible BOOL,
                 is_smart BOOL,
                 PRIMARY KEY (id)
                 )

@@ -24,18 +24,6 @@ class Database:
         except Error as e:
             print(e)
 
-    def connect(self):
-        try:
-            self.connection = mysql.connector.connect(
-                host=self.host,
-                user=self.user,
-                password=self.password,
-                database=self.database
-            )
-            self.cursor = self.connection.cursor()
-        except Error as e:
-            print(e)
-
     def create_table(self, table_sql):
         try:
             self.cursor.execute(table_sql)

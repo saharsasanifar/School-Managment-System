@@ -52,3 +52,21 @@ class Student:
         params = (course_id,)
         self.database.execute_query(query, params)
         self.database.commit()
+
+    def search_student_by_id(self, id):
+        query = "SELECT * FROM students WHERE id = %s"
+        params = (id,)
+        self.database.execute_query(query, params)
+        self.database.commit()
+
+    def search_student_by_name(self, name):
+        query = "SELECT * FROM students WHERE name = %s"
+        params = (name,)
+        self.database.execute_query(query, params)
+        self.database.commit()
+
+    def search_by_course(self, course_id):
+        query = "SELECT * FROM students WHERE course_id = %s"
+        params = (course_id,)
+        self.database.execute_query(query, params)
+        self.database.commit()

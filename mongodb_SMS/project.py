@@ -113,4 +113,55 @@ class School:
     def __init__(self, db_connection):
         self.db_connection = db_connection
 
-        
+    def add_student(self, student):
+        student = student.change_to_dict()
+        print(student)
+        try:
+            self.db_connection.db[self.db_connection.Students].insert_one(student)
+            print("Added!")
+        except Exception as e:
+            print(e)
+
+    def remove_student(self, stu_id):
+        result = self.db_connection.db[self.db_connection.Students].delete_one({"id_": stu_id})
+        if result.deleted_count:
+            print("Removed!")
+        else:
+            print("Not Found!")
+
+    def search_student(self, stu_id):
+        data = self.db_connection.db[self.db_connection.Students].find_one({"id_": stu_id})
+        print(data)
+
+    def show_all_students(self):
+        data = self.db_connection.db[self.db_connection.Students].find()
+        data = list(data)
+
+    def add_teacher(self, teacher):
+        teacher = teacher.change_to_dict()
+        self.db_connection.db[self.db_connection.Teachers].insert_one(teacher)
+        print("Added!")
+
+    def remove_teacher(self, teacher_id):
+        result = self.db_connection.db[self.db_connection.Teachers].delete_one({"id_": teacher_id})
+        if result.deleted_count:
+            print("Removed!")
+        else:
+            print("Not Found!")
+
+    def add_classroom(self, classroom):
+        classroom = classroom.change_to_dict()
+        self.db_connection.db[self.db_connection.Classes].insert_one(classroom)
+        print("Added!")
+
+    def add_course(self, course):
+        course = course.change_to_dict()
+        self.db_connection.db[self.db_connection.Courses].insert_one(course)
+        print("Added!")
+
+    def remove_course(self, course_id):
+        result = self.db_connection.db[self.db_connection.Courses].delete_one({"course_id": course_id})
+        if result.deleted_count:
+            print("Removed!")
+        else:
+            print("Not Found!")
